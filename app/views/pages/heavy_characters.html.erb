@@ -1,1 +1,16 @@
 <h1> Welcome to heavy characters page : </h1>
+
+<ul>
+	<% @heavy_characters.each{ |movies_set, characters_list| %>
+		<li>In <%= movies_set %> we can find :
+			<ul>
+				<% characters_list.each{ |heavy_character| %>
+					<li> <%="#{heavy_character[:name]} from #{heavy_character[:homeworld]} and weighting #{heavy_character[:mass]}" %>
+					</li>
+					<!-- TODO : output name of the planet, not this link -->
+				<%}%>
+			</ul>
+			<!-- TODO : output name of the movie, not this link -->
+		</li>
+	<%}%>
+</ul>
